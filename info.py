@@ -21,28 +21,28 @@ def is_enabled(value, default):
 PORT = environ.get("PORT", "8080")
 WEBHOOK = bool(environ.get("WEBHOOK", True)) # for web support on/off
 SESSION = environ.get('SESSION', 'Media_search')
-API_ID = int(environ.get('API_ID', '29450452'))
-API_HASH = environ.get('API_HASH', '54759945ff88b52777eec9a455944d31')
-BOT_TOKEN = environ.get('BOT_TOKEN', "")
+API_ID = int(environ.get('API_ID', '31761013'))
+API_HASH = environ.get('API_HASH', '3d55d62014467b2a922c6c0d6d95deae')
+BOT_TOKEN = environ.get('BOT_TOKEN', "8468027121:AAFNlf8WjFbstBvdZgNutffYXsrBircEfJ8")
 PICS = (environ.get('PICS' ,'https://telegra.ph/file/517bc12dd5c1347df10f6.jpg')).split()
 BOT_START_TIME = time()
 
 # Admins, Channels & Users
-LOG_CHANNEL = int(environ.get('LOG_CHANNEL', 0))
+LOG_CHANNEL = int(environ.get('LOG_CHANNEL', -1003906716542))
 ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '1759982322').split()]
 CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1001853074923 -1001565553195 -1002112912927 -1001889509068 -1001565553195').split()]
 auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '').split()]
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
 auth_grp = environ.get('AUTH_GROUP', '')
-auth_channel = environ.get('AUTH_CHANNEL', '-1001889509068')
+auth_channel = environ.get('AUTH_CHANNEL', '-1004396692475')
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
 AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else None
 INDEX_REQ_CHANNEL = int(environ.get('INDEX_REQ_CHANNEL', LOG_CHANNEL))
 FILE_STORE_CHANNEL = [int(ch) for ch in (environ.get('FILE_STORE_CHANNEL', '-1001860177906')).split()]
 
 # MongoDB information
-DATABASE_URI = environ.get('DATABASE_URI', "")
-DATABASE_NAME = environ.get('DATABASE_NAME', "Cluster0")
+DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://dubbingroup29_db_user:itsyashjha@immortaldata.ojaeaxj.mongodb.net/?retryWrites=true&w=majority")
+DATABASE_NAME = environ.get('DATABASE_NAME', "Yae_Probot")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 MAX_RIST_BTNS = int(environ.get('MAX_RIST_BTNS', "10"))
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
@@ -64,7 +64,7 @@ BUTTON_LOCK = is_enabled(environ.get("BUTTON_LOCK", "True"), True)
 USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', True))
 SINGLE_BUTTON = is_enabled(environ.get('SINGLE_BUTTON', "True"), True)
 P_TTI_SHOW_OFF = is_enabled(environ.get('P_TTI_SHOW_OFF', "True"), True)
-PUBLIC_FILE_STORE = is_enabled(environ.get('PUBLIC_FILE_STORE', "True"), True)
+PUBLIC_FILE_STORE = is_enabled(environ.get('PUBLIC_FILE_STORE', "False"), True)
 PROTECT_CONTENT = is_enabled(environ.get('PROTECT_CONTENT', "False"), False)
 SPELL_CHECK_REPLY = is_enabled(environ.get("SPELL_CHECK_REPLY", "True"), True)
 MELCOW_NEW_USERS = is_enabled(environ.get('MELCOW_NEW_USERS', "True"), True)
